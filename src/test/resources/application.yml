@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:fleet-test-db
+    username: sa
+    password: 12345678
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
