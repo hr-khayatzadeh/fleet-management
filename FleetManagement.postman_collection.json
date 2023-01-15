@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "33a9f9ae-e8ea-4fa8-9199-139ceaf7452d",
+		"name": "FleetManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1891909"
+	},
+	"item": [
+		{
+			"name": "Add Operational Car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"brand\": \"Flexa\",\r\n  \"manufacturer\": \"Clevershuttle\",\r\n  \"licensePlate\": \"L-ME8877D\",\r\n  \"operationCity\": {\r\n    \"name\": \"Munich\",\r\n    \"province\": \"Bavaria\",\r\n    \"postalCode\": \"80331\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API}}/fleet/car",
+					"host": [
+						"{{HOST}}{{API}}"
+					],
+					"path": [
+						"fleet",
+						"car"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Car Status",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"licensePlate\": \"L-ME8877D\",\r\n  \"status\": \"IN_MAINTENANCE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API}}/fleet/car/status",
+					"host": [
+						"{{HOST}}{{API}}"
+					],
+					"path": [
+						"fleet",
+						"car",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deactivate operation city for a car",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Munich\",\r\n  \"postalCode\": \"80331\",\r\n  \"licensePlate\": \"L-ME8877D\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API}}/fleet/operation/deactivate",
+					"host": [
+						"{{HOST}}{{API}}"
+					],
+					"path": [
+						"fleet",
+						"operation",
+						"deactivate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Car by Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API}}/fleet/car/status/AVAILABLE",
+					"host": [
+						"{{HOST}}{{API}}"
+					],
+					"path": [
+						"fleet",
+						"car",
+						"status",
+						"AVAILABLE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Car by License Plate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API}}/fleet/car/license/L-CS8877",
+					"host": [
+						"{{HOST}}{{API}}"
+					],
+					"path": [
+						"fleet",
+						"car",
+						"license",
+						"L-CS8877"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Car by Brand",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API}}/fleet/car/brand/Flexa",
+					"host": [
+						"{{HOST}}{{API}}"
+					],
+					"path": [
+						"fleet",
+						"car",
+						"brand",
+						"Flexa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Car by Operationl City Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API}}/fleet/car/operation/Cologne",
+					"host": [
+						"{{HOST}}{{API}}"
+					],
+					"path": [
+						"fleet",
+						"car",
+						"operation",
+						"Cologne"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Car by Operationl City Name and Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API}}/fleet/car/operation/Cologne/ACTIVATED",
+					"host": [
+						"{{HOST}}{{API}}"
+					],
+					"path": [
+						"fleet",
+						"car",
+						"operation",
+						"Cologne",
+						"ACTIVATED"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
